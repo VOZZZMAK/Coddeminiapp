@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>КОДД — цифровое оформление</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Telegram Mini-App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<!-- ───────────── LOADER ───────────── -->
+<div id="loader"><div class="spinner"></div></div>
+
+<!-- ───────────── FULL GIF ─────────── -->
+<div id="fullscreenGif" class="fullscreen-gif">
+    <span class="close-fullscreen">×</span>
+    <img id="fullscreenGifImage" src="" alt="" />
+    <div id="fullscreenGifCaption" class="gif-caption"></div>
+</div>
+
+<!-- ───────────── STORY MODAL ──────── -->
+<!-- <div id="storyModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-text"  id="modalText"></div>
+        <button class="modal-close">Закрыть</button>
+    </div>
+</div> -->
+
+<!-- ───────────── ОСНОВНОЙ КОНТЕЙНЕР ─ -->
+<div class="container">
+    <header class="header">
+        <div class="logo">КОДД</div>
+        <div class="tagline">диджитал оформление бизнеса</div>
+    </header>
+
+    <!-- ─ STORIES ─ -->
+    <section class="stories-wrapper">
+        <div class="stories-container">
+            <!-- 5 карточек (пример) -->
+            <div class="story" data-index="1">
+                <div class="story-gif-container"><img src="Gifs/money.gif" class="story-gif" alt="Эквайринг"/></div>
+                <div class="story-text">Подключаем эквайринг</div>
+            </div>
+            <div class="story" data-index="2">
+                <div class="story-gif-container"><img src="Gifs/stats.gif" class="story-gif" alt="Статистика"/></div>
+                <div class="story-text">Расширенная статистика</div>
+            </div>
+            <div class="story" data-index="3">
+                <div class="story-gif-container"><img src="Gifs/code.gif" class="story-gif" alt="Код"/></div>
+                <div class="story-text">Уникальный код</div>
+            </div>
+            <div class="story" data-index="4">
+                <div class="story-gif-container"><img src="Gifs/design.gif" class="story-gif" alt="Дизайн"/></div>
+                <div class="story-text">Лучший дизайн</div>
+            </div>
+            <div class="story" data-index="5">
+                <div class="story-gif-container"><img src="Gifs/cool.gif" class="story-gif" alt="Крутые"/></div>
+                <div class="story-text">Внедрение AI-технологий</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─ КНОПКИ ГЛАВНОГО МЕНЮ ─ -->
+    <div class="button-container">
+        <button class="btn"            id="orderBtn">Оставить заявку</button>
+        <button class="btn btn-secondary" id="supportBtn">Тех. поддержка</button>
+    </div>
+
+    <!-- ─ ПОРТФОЛИО / ЛК (общий блок) ─ -->
+    <section id="portfolioSection" style="display:none" class="portfolio-section">
+        <h2 class="portfolio-title" id="portfolioTitle">Примеры работ</h2>
+        <div id="portfolioList" class="portfolio-list"></div> <!-- примеры -->
+        <div id="lkList"        class="portfolio-list" style="display:none"></div> <!-- личный кабинет -->
+    </section>
+</div>
+
+<!-- ─ НИЖНЯЯ НАВИГАЦИЯ ─ -->
+<!-- ─ НИЖНЯЯ НАВИГАЦИЯ ─ -->
+<nav class="bottom-nav">
+  <button id="navMain" class="nav-btn active">
+    <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9h-2v9h-5v-6h-4v6H5v-9H3z"/></svg>
+    <span>Главное меню</span>
+  </button>
+  <button id="navPortfolio" class="nav-btn">
+    <svg viewBox="0 0 24 24"><path d="M4 6h16v4H4V6zm0 6h16v8H4v-8z"/></svg>
+    <span>Примеры</span>
+  </button>
+  <button id="navDummy" class="nav-btn">
+    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67
+    0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+    <span>Кабинет</span>
+  </button>
+</nav>
+
+
+<!-- Скрипт -->
+<script src="script.js"></script>
+</body>
+</html>
